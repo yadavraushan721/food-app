@@ -1,0 +1,33 @@
+{
+  "name": "food-app",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/yadavraushan721/food-app#readme",
+  "bugs": {
+    "url": "https://github.com/yadavraushan721/food-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yadavraushan721/food-app.git"
+  },
+  "license": "ISC",
+  "author": "Raushan",
+
+
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build":"parcel build index.html"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+
+}
