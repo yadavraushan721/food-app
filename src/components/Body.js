@@ -84,8 +84,7 @@ const Body = () => {
               (res) => res.info.avgRating > 4.5,
             );
             // console.log(listOfRestaurant);
-
-            setListOfRestaurant(filteredList); // useState method : rerender and modified component
+            setFilteredRestaurant(filteredList); // useState method : rerender and modified component
             console.log("Button clicked");
           }}
         >
@@ -94,13 +93,12 @@ const Body = () => {
       </div>
 
       <div className="res-container">
-        {filteredRestaurant.map(
-          (
-            restaurant, // whenever rendering rendring through filteredRestaurant
-          ) => (
+        {
+          // whenever rendering rendring through filteredRestaurant
+          filteredRestaurant.map((restaurant) => (
             <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-          ),
-        )}
+          ))
+        }
       </div>
     </div>
   );
