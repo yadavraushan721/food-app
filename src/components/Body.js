@@ -29,7 +29,7 @@ const Body = () => {
   //! useEffect-------------------------------------------------------------------
 
   useEffect(() => {
-    console.log("useEffect Called");
+    console.log("useEffect Called : BODY");
     fetchData();
   }, []);
 

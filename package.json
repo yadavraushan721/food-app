@@ -12,22 +12,20 @@
   },
   "license": "ISC",
   "author": "Raushan",
-
-
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
-    "build":"parcel build index.html"
+    "build": "parcel build index.html"
   },
-  "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
-  },
+"dependencies": {
+  "react": "18.2.0",
+  "react-dom": "18.2.0",
+  "react-router-dom": "6.22.3"
+},
   "devDependencies": {
     "parcel": "^2.16.3"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 versions"
   ]
-
 }

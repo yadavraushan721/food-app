@@ -41,8 +41,10 @@ Local State variable - super powerful variable
 - useEffect():
   first body will rendered than useEffect will be called.
   the callback function will be called after component rendered.
-
-Load -> render -> API call -> render
+  1. if no dependency array : useEffect called on every render
+  2. if dependency array is empty : useEffect is called on initial render ( just once)
+  3. if dependency array is [btnNameReact] : called everytime btnNameReact is updated
+     Load -> render -> API call -> render
 
 const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
