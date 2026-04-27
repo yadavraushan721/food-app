@@ -2,6 +2,17 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
+/**
+ * 🚀 Final Answer (Short & Precise)
+ * ✅ listOfRestaurant → updated once (after API), then treated as immutable
+ * ✅ filteredRestaurant → updated multiple times
+ *❗ But updates are NOT based on previous filteredRestaurant
+ * ✅ They are always recomputed from listOfRestaurant
+ * 
+ * Never filter on filteredRestaurant
+   Always filter on listOfRestaurant
+ */
+
 const Body = () => {
   //! HOOKS :  useState variable -------------------------------------------------
   //Local state variable :  super powerful variable
@@ -12,6 +23,7 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  // whenever state variable update, react triggers a reconcilliation cycle (re-render the component)
   console.log("Body Rendered");
 
   //! useEffect-------------------------------------------------------------------
@@ -23,13 +35,18 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
     );
 
     const json = await data.json();
     console.log("API DATA : ", json); // live swiggy api data
     // console.log("CARDS:", json?.data?.cards);  // restaurant cards
 
+    //? destructuring the live api data
+    //  console.log(
+    //   "rest data",
+    //   json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants,
+    // );
     //! Optional chaining
     const restaurants = json?.data?.cards
       ?.map(

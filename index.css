@@ -65,8 +65,14 @@
 
 .login{
     margin-right: 1rem;
-    padding: auto;
+    margin-top: 0.5rem;
+    padding: 10px;
     cursor: pointer;
+    height: fit-content ;
+    font-size: 25px;
+    border-radius: 15%;
+    border: none;
+
 }
 
 .filter{
