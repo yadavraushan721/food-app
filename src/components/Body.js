@@ -29,17 +29,18 @@ const Body = () => {
   //! useEffect-------------------------------------------------------------------
 
   useEffect(() => {
-    console.log("useEffect Called : BODY");
+    // console.log("useEffect Called : BODY");
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.63270&lng=77.21980&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
     );
+    // https://corsproxy.io/?
 
     const json = await data.json();
-    console.log("API DATA : ", json); // live swiggy api data
+    // console.log("API DATA : ", json); // live swiggy api data
     // console.log("CARDS:", json?.data?.cards);  // restaurant cards
 
     //? destructuring the live api data

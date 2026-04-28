@@ -13,7 +13,7 @@ const Header = () => {
    *
    *  */
   useEffect(() => {
-    console.log("useEffect called : HEADER");
+    // console.log("useEffect called : HEADER");
   }, [btnNameReact]);
 
   return (
