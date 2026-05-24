@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 /**
  * 🚀 Final Answer (Short & Precise)
@@ -40,7 +41,7 @@ const Body = () => {
     // https://corsproxy.io/?
 
     const json = await data.json();
-    // console.log("API DATA : ", json); // live swiggy api data
+    console.log("API DATA : ", json); // live swiggy api data
     // console.log("CARDS:", json?.data?.cards);  // restaurant cards
 
     //? destructuring the live api data
@@ -114,7 +115,9 @@ const Body = () => {
         {
           // whenever rendering rendring through filteredRestaurant
           filteredRestaurant.map((restaurant) => (
-            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            <Link to="restaurant.info.id" key={restaurant.info.id}>
+              <RestaurantCard resData={restaurant} />
+            </Link>
           ))
         }
       </div>
